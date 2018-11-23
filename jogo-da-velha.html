@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" href="assets/img/jogo-da-velha-icon.png" />
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/jogo-da-velha.css">
+    <script src="assets/js/navbar.js" defer></script>
+    <script src="assets/js/jogo-da-velha.js" defer></script>
+    <title>Tic Tac Toe</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <header>
+            <div class="titulo">
+                <h2>Tic Tac Toe</h2>
+            </div>
+
+            <div class="menu-hamburguer">
+                <span class="traco traco-1"></span>
+                <span class="traco traco-2"></span>
+                <span class="traco traco-3"></span>
+            </div>
+
+            <div class="filtros">
+                <a href="index.html">Home</a>
+                <a href="jokenpo.html">Jo Ken Po</a>
+                <a href="about.html">About</a>
+            </div>
+        </header>
+
+        <nav class="filtros mobile">
+            <a href="index.html">Home</a>
+            <a href="jokenpo.html">Jo Ken Po</a>
+            <a href="about.html">About</a>
+        </nav>
+    </div>
+
+    <main>
+        <h2 id="mostrador">Turn: <span id="jogadorAtual">O</span></h2>
+
+        <div id="tabuleiro">
+            <div class="linha">
+                <p class="casa" id="c1"></p>
+                <p class="casa" id="c2"></p>
+                <p class="casa" id="c3"></p>
+            </div>
+            <div class="linha">
+                <p class="casa" id="c4"></p>
+                <p class="casa" id="c5"></p>
+                <p class="casa" id="c6"></p>
+            </div>
+            <div class="linha">
+                <p class="casa" id="c7"></p>
+                <p class="casa" id="c8"></p>
+                <p class="casa" id="c9"></p>
+            </div>
+        </div>
+
+        <button id="restart">
+            <a href="jogo-da-velha.html">RESTART</a>
+        </button>
+    </main>
+</body>
+
+</html>
