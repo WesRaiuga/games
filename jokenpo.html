@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" href="assets/img/jokenpo-user-papel.png" />
     <link rel="stylesheet" href="assets/css/navbar.css">
     <link rel="stylesheet" href="assets/css/jokenpo.css">
     <script src="assets/js/navbar.js" defer></script>
@@ -40,14 +41,46 @@
     </div>
 
     <main>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, obcaecati dolores illum error quaerat soluta temporibus, dolorem id, libero amet maxime molestias odit eveniet dolor earum vitae unde numquam suscipit.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, obcaecati dolores illum error quaerat soluta temporibus, dolorem id, libero amet maxime molestias odit eveniet dolor earum vitae unde numquam suscipit.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, obcaecati dolores illum error quaerat soluta temporibus, dolorem id, libero amet maxime molestias odit eveniet dolor earum vitae unde numquam suscipit.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, obcaecati dolores illum error quaerat soluta temporibus, dolorem id, libero amet maxime molestias odit eveniet dolor earum vitae unde numquam suscipit.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, obcaecati dolores illum error quaerat soluta temporibus, dolorem id, libero amet maxime molestias odit eveniet dolor earum vitae unde numquam suscipit.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, obcaecati dolores illum error quaerat soluta temporibus, dolorem id, libero amet maxime molestias odit eveniet dolor earum vitae unde numquam suscipit.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, obcaecati dolores illum error quaerat soluta temporibus, dolorem id, libero amet maxime molestias odit eveniet dolor earum vitae unde numquam suscipit.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, obcaecati dolores illum error quaerat soluta temporibus, dolorem id, libero amet maxime molestias odit eveniet dolor earum vitae unde numquam suscipit.</p>
+        <section id="escolhas">
+            <div id="user">
+                <p class="label">Player</p>
+                <img src="assets/img/jokenpo-user-pedra.png" alt="Mão do jogador" id="mao-jogador">
+            </div>
+            <div id="versus">
+                <img src="assets/img/jokenpo-versus.png" alt="Versus">
+                <p id="mostrador">Choose Your Weapon</p>
+            </div>
+            <div id="cpu">
+                <img src="assets/img/jokenpo-cpu-pedra.png" alt="Mão da CPU" id="mao-cpu">
+                <p class="label">CPU</p>
+            </div>
+        </section>
+
+        <section id="controles">
+            <div id="botoes">
+                <div>
+                    <button class="btn btn-jkp" id="btn-pedra">
+                        <img src="assets/img/jokenpo-user-pedra.png" alt="Mão em forma de Pedra">
+                    </button>
+                    <p class="lb-jkp">Rock</p>
+                </div>
+                <div>
+                    <button class="btn btn-jkp" id="btn-papel">
+                        <img src="assets/img/jokenpo-user-papel.png" alt="Mão em forma de Papel">
+                    </button>
+                    <p class="lb-jkp">Paper</p>
+                </div>
+                <div>
+                    <button class="btn btn-jkp" id="btn-tesoura">
+                        <img src="assets/img/jokenpo-user-tesoura.png" alt="Mão em forma de Tesoura">
+                    </button>
+                    <p class="lb-jkp">Scissors</p>
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-jogar" id="btn-start" disabled>START</button>
+            </div>
+        </section>
     </main>
 </body>
 

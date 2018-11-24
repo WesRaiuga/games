@@ -1,0 +1,145 @@
+/* GERAL */
+@font-face {
+    font-family: "Splatter Kings";
+    src: url(../fonts/Splatter_Kings.ttf) format("truetype");
+}
+body{
+    background-color: #ebebeb;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 3px;
+    margin: 0;
+}
+main{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Splatter Kings', sans-serif;
+}
+.btn{
+    background-color: #b9b9b9;
+    border: none;
+    box-shadow: 0 9px #999;
+    cursor: pointer;
+    outline: none;
+}
+.btn:active{
+    box-shadow: 0 4px #666;
+    transform: translateY(4px);
+}
+
+/* Seção Escolhas */
+#escolhas{
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+.label{
+    font-size: 20px;
+    text-align: center;
+}
+#mao-cpu, #mao-jogador{
+    animation-name: floating;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    height: 170px;
+    opacity: 0.4;
+    width: 240px;
+}
+@keyframes floating {
+    from { transform: translate(0,  0px); }
+    65%  { transform: translate(0, 15px); }
+    to   { transform: translate(0, -0px); }    
+}
+#versus{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+#versus img{
+    width: 70px;
+}
+#mostrador{
+    color: #002fff;
+    font-size: 25px;
+    margin-top: 20px;
+    text-align: center;
+    width: 220px;
+}
+
+/* Seção Controles */
+#controles{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+#controles > div:last-child{
+    margin: 10px 0;
+}
+#botoes{
+    display: flex;
+    justify-content: space-evenly;
+    width: 340px;
+}
+#botoes > div{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 80px;
+}
+#botoes > div > p{
+    visibility: hidden;
+}
+
+.btn-jkp{
+    border-radius: 50%;
+    height: 60px;
+    padding: 10px 10px;
+    width: 60px;
+}
+.btn-jkp img{
+    height: 30px;
+}
+
+.btn-jogar{
+    border-radius: 15px;
+    color: #000;
+    cursor: not-allowed;
+    font-family: 'Splatter Kings', sans-serif;
+    font-size: 20px;
+    letter-spacing: 5px;
+    padding: 15px 32px;
+    text-align: center;
+}
+
+/* Mobile */
+@media only screen and (max-width: 700px){
+    #titulo h1{
+        font-size: 30px;
+        margin: 2px 0 10px 0;
+    }
+    #escolhas{
+        flex-flow: column-reverse;
+    }
+    #mao-cpu, #mao-jogador{
+        height: 85px;
+        width: 120px;
+    }
+    #versus img{
+        width: 35px;
+    }
+    #mostrador{
+        font-size: 20px;
+        margin-top: 0;
+        width: auto;
+    }
+    .label{
+        margin: 10px 0;
+    }
+    #botoes{
+        margin-top: 20px;
+    }
+    .lb-jkp{
+        margin: 5px 0;
+    }
+}
