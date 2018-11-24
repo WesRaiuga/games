@@ -67,10 +67,13 @@ header {
     position: absolute;
     left: 0;
     right: 0;
-    background-color: #304050;
+    background-color: #3e4d5c;
     z-index: 1;
     transform: translateY(-101%);
     transition: 0.5s;
+}
+.filtros.mobile a{
+    border-top: 1px solid #304050;
 }
 
 .filtros.mobile.ativo {
@@ -79,12 +82,19 @@ header {
 
 .filtros a {
     color: #FFF;
-    margin: 10px;
+    padding: 10px 0;
+    text-align: center;
+    width: 100vw;
+}
+
+.filtros a:active{
+    background-color: #304050;
 }
 
 @media(min-width: 576px) {
     header {
       justify-content: space-between;
+      padding: 0 20px;
     }
   
     .menu-hamburguer {
@@ -93,6 +103,16 @@ header {
   
     .filtros {
       display: flex;
+    }
+
+    .filtros a{
+        padding: 10px;
+        width: auto;
+    }
+
+    .filtros a:hover{
+        background-color: #3e4d5c;
+        transition: 0.5s;
     }
   
     .filtros.mobile {

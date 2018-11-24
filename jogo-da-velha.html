@@ -14,25 +14,26 @@
 </head>
 
 <body>
+    <!-- Navbar -->
     <div class="navbar">
         <header>
             <div class="titulo">
                 <h2>Tic Tac Toe</h2>
             </div>
-
+            
             <div class="menu-hamburguer">
                 <span class="traco traco-1"></span>
                 <span class="traco traco-2"></span>
                 <span class="traco traco-3"></span>
             </div>
-
+            
             <div class="filtros">
                 <a href="index.html">Home</a>
                 <a href="jokenpo.html">Jo Ken Po</a>
                 <a href="about.html">About</a>
             </div>
         </header>
-
+        
         <nav class="filtros mobile">
             <a href="index.html">Home</a>
             <a href="jokenpo.html">Jo Ken Po</a>
@@ -40,8 +41,10 @@
         </nav>
     </div>
 
+    <!-- Conteúdo da página -->
     <main>
         <h2 id="mostrador">Turn: <span id="jogadorAtual">O</span></h2>
+        <h2 id="resultado"></h2>
 
         <div id="tabuleiro">
             <div class="linha">
@@ -61,9 +64,7 @@
             </div>
         </div>
 
-        <button id="restart">
-            <a href="jogo-da-velha.html">RESTART</a>
-        </button>
+        <button id="restart">RESTART</button>
     </main>
 </body>
 
