@@ -32,6 +32,7 @@ main{
     align-items: center;
     display: flex;
     justify-content: space-around;
+    margin: 10px 0;
 }
 .label{
     font-size: 20px;
@@ -41,15 +42,17 @@ main{
     animation-name: floating;
     animation-duration: 2s;
     animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: linear;
     height: 170px;
     opacity: 0.4;
     width: 240px;
 }
 @keyframes floating {
-    from { transform: translate(0,  0px); }
-    65%  { transform: translate(0, 15px); }
-    to   { transform: translate(0, -0px); }    
+    from { transform: translate(0, 0px); }
+    25%  { transform: translate(10px, -10px); }
+    50%  { transform: translate(20px, 0px); }
+    75%  { transform: translate(10px, -10px); }
+    to   { transform: translate(0, 0px); }    
 }
 #versus{
     align-items: center;
@@ -116,7 +119,7 @@ main{
 }
 
 /* Mobile */
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 660px){
     #titulo h1{
         font-size: 30px;
         margin: 2px 0 10px 0;
