@@ -1,5 +1,5 @@
 /* DECLARAÇÃO DE VARIÁVEIS */
-let escolhaJogador = '';
+let escolhaJogador;
 let escolhaCPU;
 let mostrador = document.querySelector('#mostrador');
 let pedra = document.querySelector('#btn-pedra');
@@ -44,30 +44,30 @@ start.onclick = () => {
 }
 
 /* FUNÇÕES AUXILIARES */
-function darFeedbackEscolha(mostrar, apagar1, apagar2, cor){
+const darFeedbackEscolha = (mostrar, apagar1, apagar2, cor) => {
     lbJKP[mostrar].style = 'visibility: visible;';
     lbJKP[apagar1].style = 'visibility: hidden;';
     lbJKP[apagar2].style = 'visibility: hidden;';
     btnJKP[mostrar].style = 'background-color:' + cor;
     btnJKP[apagar1].style = 'background-color: #b9b9b9';
     btnJKP[apagar2].style = 'background-color: #b9b9b9';
-}
+};
 
-function habilitarStart(){
+const habilitarStart = () => {
     start.disabled = false;
     start.style = 'cursor: pointer; background-color: #1ba8e9;';
-}
+};
 
-function resetarBotoes(){
+const resetarBotoes = () => {
     start.disabled = true;
     start.style = 'cursor: not-allowed; background-color: #b9b9b9;';
     for (let i = 0; i < btnJKP.length; i++) {
         btnJKP[i].style = 'background-color: #b9b9b9';
         lbJKP[i].style = 'visibility: hidden;';
     }
-}
+};
 
-function definirMaoCPU(){
+const definirMaoCPU = () => {
     let random = Math.floor(Math.random() * 3);
     if(random == 0){
         return 'cpu-pedra';
@@ -75,9 +75,9 @@ function definirMaoCPU(){
         return 'cpu-papel';
     }
     return 'cpu-tesoura';
-}
+};
 
-function verificarResultado(){
+const verificarResultado = () => {
     let cpu = escolhaCPU.substring(4);
     let user = escolhaJogador.substring(5);
     let resultado = '';
@@ -106,12 +106,12 @@ function verificarResultado(){
         }
     }
     return resultado;
-}
+};
 
-function colorirMostrador(){
+const colorirMostrador = () => {
     if (mostrador.innerHTML == 'CPU Wins'){
         return 'color: #FF0000;';
     } else if (mostrador.innerHTML == 'You Win') {
         return 'color: #008000;';
     }
-}
+};

@@ -60,6 +60,9 @@ const verificarVencedor = () => {
 // Função que verifica se as casas possuem a mesma letra
 const casasIguais = (a, b, c, letra) => {
     if(tabuleiro[a].innerHTML == letra && tabuleiro[b].innerHTML == letra && tabuleiro[c].innerHTML == letra){
+        tabuleiro[a].style = 'color: #107a10';
+        tabuleiro[b].style = 'color: #107a10';
+        tabuleiro[c].style = 'color: #107a10';
         return true;
     }
     return false;
@@ -90,5 +93,6 @@ restart.onclick = () => {
     resultado.style = '';
     for (const casa of tabuleiro) {
         casa.innerHTML = '';
+        casa.style = 'color: #000';
     }
 };
