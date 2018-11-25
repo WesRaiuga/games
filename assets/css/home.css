@@ -3,3 +3,35 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
 }
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+}
+.card{
+    background-color: #60758a;
+    border-radius: 15px;
+    box-shadow: 5px 10px 18px #888888;
+    color: #FFF;
+    margin: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100vw;
+}
+.card > div{
+    padding: 10px;
+}
+.card img{
+    height: 80px;
+}
+.card span{
+    font-size: 18pt;
+    margin: 0 20px;
+}
+
+@media(min-width: 576px) {
+    .card{
+        width: auto;
+    }
+}
