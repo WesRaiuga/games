@@ -1,6 +1,7 @@
 /* DECLARAÇÃO DE VARIÁVEIS */
 let escolhaJogador;
 let escolhaCPU;
+let contador = 0;
 let mostrador = document.querySelector('#mostrador');
 let pedra = document.querySelector('#btn-pedra');
 let papel = document.querySelector('#btn-papel');
@@ -8,6 +9,8 @@ let tesoura = document.querySelector('#btn-tesoura');
 let start = document.querySelector('#btn-start');
 let lbJKP = document.querySelectorAll('.lb-jkp');
 let btnJKP = document.querySelectorAll('.btn-jkp');
+let maoJogador = document.querySelector('#mao-jogador');
+let maoCPU = document.querySelector('#mao-cpu');
 
 /* EVENTOS DE CLIQUE NOS BOTÕES */
 pedra.onclick = () => {
@@ -15,32 +18,40 @@ pedra.onclick = () => {
     mostrador.style = 'visibility: hidden;';
     darFeedbackEscolha(0, 1, 2, '#ff2825');
     habilitarStart();
+    contador += 2;
 }
 papel.onclick = () => {
     escolhaJogador = 'user-papel';
     mostrador.style = 'visibility: hidden;';
     darFeedbackEscolha(1, 0, 2, '#ffff00');
     habilitarStart();
+    contador -= 3;
 }
 tesoura.onclick = () => {
     escolhaJogador = 'user-tesoura';
     mostrador.style = 'visibility: hidden;';
     darFeedbackEscolha(2, 0, 1, '#00a000');
     habilitarStart();
+    contador += 4;
 }
 start.onclick = () => {
-    let maoJogador = document.querySelector('#mao-jogador');
-    maoJogador.src = `assets/img/jokenpo-${escolhaJogador}.png`;
-    maoJogador.style = 'animation: paused; opacity: 1;';
+    if(contador == 7){
+        maoJogador.src = 'assets/img/jokenpo-user-paw.png';
+        maoCPU.src = 'assets/img/jokenpo-cpu-paw.png';
+        mostrador.innerHTML = 'Peace Among Worlds';
+    } else{
+        maoJogador.src = `assets/img/jokenpo-${escolhaJogador}.png`;
+        escolhaCPU = definirMaoCPU();
+        maoCPU.src = `assets/img/jokenpo-${escolhaCPU}.png`;
+        mostrador.innerHTML = verificarResultado();
+    }
 
-    let maoCPU = document.querySelector('#mao-cpu');
-    escolhaCPU = definirMaoCPU();
-    maoCPU.src = `assets/img/jokenpo-${escolhaCPU}.png`;
+    maoJogador.style = 'animation: paused; opacity: 1;';
     maoCPU.style = 'animation: paused; opacity: 1;';
 
-    mostrador.innerHTML = verificarResultado();
     mostrador.style = 'visibility: visible;' + colorirMostrador();
     resetarBotoes();
+    contador = 0;
 }
 
 /* FUNÇÕES AUXILIARES */

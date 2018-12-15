@@ -43,7 +43,7 @@ main{
     animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-    height: 170px;
+    height: 200px;
     opacity: 0.4;
     width: 240px;
 }
@@ -129,7 +129,7 @@ main{
     }
     #mao-cpu, #mao-jogador{
         height: 85px;
-        width: 120px;
+        width: 110px;
     }
     #versus img{
         display: none;
