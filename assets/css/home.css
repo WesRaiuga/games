@@ -23,7 +23,7 @@ main{
     padding: 10px;
 }
 .card img{
-    width: 80px;
+    height: 80px;
 }
 .card span{
     font-size: 18pt;
