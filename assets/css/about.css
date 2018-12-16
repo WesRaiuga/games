@@ -3,3 +3,109 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
 }
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 10vw;
+}
+
+/* About Me */
+
+#about-me{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#about-me > img{
+    border-radius: 15px;
+    border: 2px solid #304050;
+    height: 150px;
+}
+
+#info{
+    text-align: center;
+}
+
+#info > div{
+    margin: 5px 0 10px;
+}
+
+#info div h2{
+    margin: 3px 0;
+}
+
+#info div p{
+    margin: 3px 0;
+}
+
+#info div:nth-child(1) p{
+    font-weight: bold;
+}
+
+/* About Games */
+
+#about-games{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.collapse{
+    margin-bottom: 2px;
+}
+
+.collapse button {
+    background-color: #304050;
+    color: white;
+    cursor: pointer;
+    padding: 12px 16px 12px 12px;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 15pt;
+    display: flex;
+    justify-content: space-between;
+}
+
+.collapse button i{
+    transition: 0.2s;
+}
+
+.content{
+    padding: 5px 10px;
+    display: none;
+    background-color: rgba(48, 64, 80, 0.1);
+}
+
+.coll-active button i{
+    transform: rotateZ(-180deg);
+    transform-origin: center;
+}
+
+.coll-active .content{
+    display: block;
+}
+
+@media(min-width: 576px) {
+    main{
+        align-items: flex-start;
+        padding: 10px 20vw;
+    }
+    
+    #about-me{
+        flex-direction: row;
+        margin: 10px 0 30px;
+    }
+
+    #about-me > img{
+        height: 200px;
+    }
+
+    #info{
+        text-align: left;
+        margin-left: 30px;
+    }
+}

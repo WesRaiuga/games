@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/navbar.css">
     <link rel="stylesheet" href="assets/css/about.css">
     <script src="assets/js/navbar.js" defer></script>
-    <title>About</title>
+    <script src="assets/js/about.js" defer></script>
+    <title>About | Games</title>
 </head>
 
 <body>
@@ -26,22 +28,60 @@
 
             <div class="filtros">
                 <a href="index.html">Home</a>
-                <a href="jogo-da-velha.html">Tic Tac Toe</a>
-                <a href="jokenpo.html">Jo Ken Po</a>
                 <a href="about.html">About</a>
             </div>
         </header>
 
         <nav class="filtros mobile">
             <a href="index.html">Home</a>
-            <a href="jogo-da-velha.html">Tic Tac Toe</a>
-            <a href="jokenpo.html">Jo Ken Po</a>
             <a href="about.html">About</a>
         </nav>
     </div>
 
     <main>
-        
+        <section id="about-me">
+            <img src="assets/img/about-weslley.jpg" alt="Foto de Weslley Alves de Aguiar">
+            <div id="info">
+                <div>
+                    <h2>Weslley Aguiar</h2>
+                    <p>aka Raiuga</p>
+                    <p>Software Developer Analyst</p>
+                    <p>From Brazil</p>
+                </div>
+                <div>
+                    <p>This project was created as an exercise in the "Programming Station" course, a partnership between Mastertech and Facebook.</p>
+                    <p>And even after the course was over, I decided to continue it.</p>
+                </div>
+            </div>
+        </section>
+        <section id="about-games">
+            <div class="collapse">
+                <button>
+                    <span>Tic Tac Toe</span>
+                    <i class="fas fa-angle-down"></i>
+                </button>
+                <div class="content">
+                    <p>This game was made to play with a friend, where the winner is the one who form three houses with the same symbol in line, whether horizontal, vertical or diagonal.</p>
+                    <p>Technologies used in the game: HTML, CSS and Javascript</p>
+                </div>
+            </div>
+            <div class="collapse">
+                <button>
+                    <span>Jo Ken Po</span>
+                    <i class="fas fa-angle-down"></i>
+                </button>
+                <div class="content">
+                    <p>This game was made to play alone, where you can choose between stone, paper and scissors, and when you hit the start button, compare your choice with the CPU choice and find out who won the match.</p>
+                    <p>The rules are simple:</p>
+                    <ul>
+                        <li>Stone wins from scissors</li>
+                        <li>Scissors wins from paper</li>
+                        <li>Paper wins from stone</li>
+                    </ul>
+                    <p>Technologies used in the game: HTML, CSS and Javascript</p>
+                </div>
+            </div>
+        </section>
     </main>
 </body>
 
