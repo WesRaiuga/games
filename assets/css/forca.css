@@ -2,3 +2,6 @@
     letter-spacing: 4px;
     font-size: 20pt;
 }
+#resposta {
+    visibility: hidden;
+}
