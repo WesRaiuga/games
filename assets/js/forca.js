@@ -4,7 +4,7 @@ function Dom() {
     this.palavra = document.querySelector("#palavra");
     this.resposta = document.querySelector('#resposta');
     this.letras = document.querySelector("#letras");
-    // this.botoesLetras;
+    this.botoesLetras;
 
     this.criaElemento = (tagName, className, content) => {
         const elem = document.createElement(tagName);
@@ -60,10 +60,16 @@ function Palavra(dicionario) {
     this.name = dicionario[this.tema.index].palavras[this.index].toUpperCase();
 }
 
+const Letra = function() {
+    this.index = 0;
+    this.name = '';
+}
+
 function Jogo() {
     this.dom = new Dom();
     this.config = new Configuracoes();
     this.palavraAtual = new Palavra(this.config.dicionario);
+    this.letraAtual = new Letra();
 
     this.carregarElementosNaTela = () => {
         this.dom.chances.innerHTML = this.config.chances;
@@ -72,12 +78,78 @@ function Jogo() {
         this.dom.resposta.innerHTML = this.palavraAtual.name;
         this.dom.carregarBotoesLetras();
     };
+
+    this.atualizarBotaoLetra = (acerto) => {
+        if (acerto) {
+            this.dom.botoesLetras[this.letraAtual.index].style.backgroundColor = 'green';
+        } else {
+            this.dom.botoesLetras[this.letraAtual.index].style.backgroundColor = 'red';
+        }
+        this.dom.botoesLetras[this.letraAtual.index].disabled = true;
+    };
+
+    this.bloquearLetras = (sts) => {
+        for (const i in this.dom.botoesLetras) {
+            this.dom.botoesLetras[i].disabled = sts;
+        }
+    };
+
+    this.mostrarResposta = (sts) => {
+        if (sts) {
+            this.dom.resposta.style.visibility = 'visible';
+        } else {
+            this.dom.resposta.style.visibility = 'hidden';
+        }
+    };
+
+    this.verificarFimDeJogo = () => {
+        if (this.config.chances <= 0) {
+            alert('Game Over');
+            this.bloquearLetras(true);
+            this.mostrarResposta(true);
+        } else {
+            // Se a palavra estiver completa, o jogo acaba também
+        }
+    };
+
+    this.contabilizarErros = () => {
+        this.config.chances--;
+        this.dom.chances.innerHTML = this.config.chances;
+    };
+
+    this.verificarLetra = () => {
+        let temEssaLetra = false;
+        for (const i in this.palavraAtual.name) {
+            if (this.letraAtual.name == this.palavraAtual.name.charAt(i) ) {
+                temEssaLetra = true;
+                document.querySelector(`.letra${i}`).innerHTML = this.letraAtual.name;
+            }
+        }
+        if (!temEssaLetra){
+            this.contabilizarErros();
+        }
+        this.atualizarBotaoLetra(temEssaLetra);
+    };
+    
+    this.jogar = (btn, index) => {
+        this.letraAtual.index = index;
+        this.letraAtual.name = btn.innerText;
+        this.verificarLetra();
+        this.verificarFimDeJogo();
+    };
     
     this.start = () => {
         console.log('Tema: ' + this.palavraAtual.tema.name);
         console.log('Palavra: ' + this.palavraAtual.name);
 
         this.carregarElementosNaTela();
+
+        this.dom.botoesLetras = document.querySelectorAll('.btn-letra');
+        for (let i = 0; i < this.dom.botoesLetras.length; i++) {
+            this.dom.botoesLetras[i].addEventListener("click", () => {
+                this.jogar(this.dom.botoesLetras[i],i);
+            });
+        }
     };
 }
 
