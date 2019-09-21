@@ -37,27 +37,6 @@ function Dom() {
 
 function Configuracoes() {
     this.chances = 6;
-    this.dicionario = [
-        {
-            "tema": "Games",
-            "palavras": ["Bloodborne", "Dark Souls", "Detroit Become Human", "Naruto Shippuden"]
-        },
-        {
-            "tema": "Filmes",
-            "palavras": ["A Origem", "Ilha do Medo", "Vingadores", "Matrix"]
-        }
-    ];
-}
-
-function Tema(dicionario) {
-    this.index = Math.floor(Math.random() * dicionario.length);
-    this.name = dicionario[this.index].tema.toUpperCase();
-}
-
-function Palavra(dicionario) {
-    this.tema = new Tema(dicionario);
-    this.index = Math.floor(Math.random() * dicionario[this.tema.index].palavras.length);
-    this.name = dicionario[this.tema.index].palavras[this.index].toUpperCase();
 }
 
 const Letra = function() {
@@ -65,17 +44,18 @@ const Letra = function() {
     this.name = '';
 }
 
-function Jogo() {
+function Jogo(palavra) {
     this.dom = new Dom();
     this.config = new Configuracoes();
-    this.palavraAtual = new Palavra(this.config.dicionario);
+    this.palavraAtual = palavra.word.toUpperCase();
+    this.temaAtual = palavra.theme.toUpperCase();
     this.letraAtual = new Letra();
 
     this.carregarElementosNaTela = () => {
         this.dom.chances.innerHTML = this.config.chances;
-        this.dom.tema.innerHTML = this.palavraAtual.tema.name;
-        this.dom.carregarLacunas(this.palavraAtual.name);
-        this.dom.resposta.innerHTML = this.palavraAtual.name;
+        this.dom.tema.innerHTML = this.temaAtual;
+        this.dom.carregarLacunas(this.palavraAtual);
+        this.dom.resposta.innerHTML = this.palavraAtual;
         this.dom.carregarBotoesLetras();
     };
 
@@ -119,8 +99,8 @@ function Jogo() {
 
     this.verificarLetra = () => {
         let temEssaLetra = false;
-        for (const i in this.palavraAtual.name) {
-            if (this.letraAtual.name == this.palavraAtual.name.charAt(i) ) {
+        for (const i in this.palavraAtual) {
+            if (this.letraAtual.name == this.palavraAtual.charAt(i) ) {
                 temEssaLetra = true;
                 document.querySelector(`.letra${i}`).innerHTML = this.letraAtual.name;
             }
@@ -139,8 +119,8 @@ function Jogo() {
     };
     
     this.start = () => {
-        console.log('Tema: ' + this.palavraAtual.tema.name);
-        console.log('Palavra: ' + this.palavraAtual.name);
+        console.log('Tema: ' + this.temaAtual);
+        console.log('Palavra: ' + this.palavraAtual);
 
         this.carregarElementosNaTela();
 
@@ -153,4 +133,14 @@ function Jogo() {
     };
 }
 
-new Jogo().start();
+axios('https://api.github.com/users/wesraiuga')
+.then(response => {
+    const palavra = {
+        word: response.data.login,
+        theme: response.data.name
+    };
+    new Jogo(palavra).start();
+})
+.catch(error => {
+    document.querySelector('body').innerHTML = '<p>Não foi possível carregar uma palavra.</p>';
+});
