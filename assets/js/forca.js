@@ -133,11 +133,11 @@ function Jogo(palavra) {
     };
 }
 
-axios('https://api.github.com/users/wesraiuga')
+axios('http://localhost:8080/GeradorDePalavras/rest/palavra')
 .then(response => {
     const palavra = {
-        word: response.data.login,
-        theme: response.data.name
+        theme: response.data.theme,
+        word: response.data.word
     };
     new Jogo(palavra).start();
 })
