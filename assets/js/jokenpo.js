@@ -36,13 +36,13 @@ tesoura.onclick = () => {
 }
 start.onclick = () => {
     if(contador == 7){
-        maoJogador.src = 'assets/img/jokenpo-user-paw.png';
-        maoCPU.src = 'assets/img/jokenpo-cpu-paw.png';
+        maoJogador.src = 'assets/img/jokenpo/jokenpo-user-paw.png';
+        maoCPU.src = 'assets/img/jokenpo/jokenpo-cpu-paw.png';
         mostrador.innerHTML = 'Peace Among Worlds';
     } else{
-        maoJogador.src = `assets/img/jokenpo-${escolhaJogador}.png`;
+        maoJogador.src = `assets/img/jokenpo/jokenpo-${escolhaJogador}.png`;
         escolhaCPU = definirMaoCPU();
-        maoCPU.src = `assets/img/jokenpo-${escolhaCPU}.png`;
+        maoCPU.src = `assets/img/jokenpo/jokenpo-${escolhaCPU}.png`;
         mostrador.innerHTML = verificarResultado();
     }
 
