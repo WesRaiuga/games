@@ -88,7 +88,18 @@ function Jogo(palavra) {
             this.bloquearLetras(true);
             this.mostrarResposta(true);
         } else {
-            // Se a palavra estiver completa, o jogo acaba também
+            let faltaLetra = false;
+            for (const i in this.palavraAtual) {
+                let caractereAtual = document.querySelector(`.letra${i}`).innerHTML;
+                if ( caractereAtual == '_' ) {
+                    faltaLetra = true;
+                    break;
+                }
+            }
+            if (!faltaLetra) {
+                alert('Você venceu!');
+                this.bloquearLetras(true);
+            }
         }
     };
 
@@ -97,12 +108,35 @@ function Jogo(palavra) {
         this.dom.chances.innerHTML = this.config.chances;
     };
 
+    this.tratarPalavra = (palavra) => {
+        palavra = palavra.replace('Ã','A');
+        palavra = palavra.replace('Á','A');
+        palavra = palavra.replace('À','A');
+        palavra = palavra.replace('Â','A');
+        palavra = palavra.replace('É','E');
+        palavra = palavra.replace('È','E');
+        palavra = palavra.replace('Ê','E');
+        palavra = palavra.replace('Í','I');
+        palavra = palavra.replace('Ì','I');
+        palavra = palavra.replace('Ó','O');
+        palavra = palavra.replace('Ò','O');
+        palavra = palavra.replace('Õ','O');
+        palavra = palavra.replace('Ô','O');
+        palavra = palavra.replace('Ú','U');
+        palavra = palavra.replace('Ù','U');
+        palavra = palavra.replace('Ü','U');
+        palavra = palavra.replace('Ñ','N');
+        palavra = palavra.replace('Ç','C');
+        return palavra;
+    };
+
     this.verificarLetra = () => {
         let temEssaLetra = false;
+        let palavraTratada = this.tratarPalavra(this.palavraAtual);
         for (const i in this.palavraAtual) {
-            if (this.letraAtual.name == this.palavraAtual.charAt(i) ) {
+            if (this.letraAtual.name == palavraTratada.charAt(i) ) {
                 temEssaLetra = true;
-                document.querySelector(`.letra${i}`).innerHTML = this.letraAtual.name;
+                document.querySelector(`.letra${i}`).innerHTML = this.palavraAtual.charAt(i);
             }
         }
         if (!temEssaLetra){
