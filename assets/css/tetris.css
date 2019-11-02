@@ -1,0 +1,55 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300);
+
+body {
+    background-color: #ebebeb;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: 0;
+}
+
+main {
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px; */
+}
+
+#score {
+    font-size: 4em;
+    /* padding: 20px; */
+    font-weight: bolder;
+    color: #304050;
+}
+
+canvas {
+    border: solid .5em #304050;
+    height: 70vh;
+}
+
+#keys {
+    display: none;
+}
+
+/* Mobile */
+@media only screen and (max-width: 660px) {
+    canvas {
+        height: 50vh;
+    }
+    #pc-controls {
+        display: none;
+    }
+    #keys {
+        display: block;
+    }
+    .arrow {
+        width: 70px;
+        height: 70px;
+        font-size: 2em;
+        margin: 5px;
+        background-color: #304050;
+        color: #fff;
+    }
+    .fa-undo-alt {
+        transform: rotateY(180deg);
+    }
+}
