@@ -7,10 +7,59 @@ body {
     margin: 0;
 }
 
+.btn {
+    background-color: #304050;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+}
+
+main {
+    position: relative;
+}
+
+#start-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 80vh;
+}
+
+#start-btn {
+    width: 160px;
+    height: 80px;
+    font-size: 2em;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    border-radius: 10px;
+    box-shadow: 0 9px #999;
+    border: none;
+}
+
+#start-btn:active{
+    box-shadow: 0 4px #666;
+    transform: translateY(4px);
+}
+
+#mute {
+    display: none;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5em;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 #score {
     font-size: 4em;
     font-weight: bolder;
     color: #304050;
+}
+
+#game {
+    display: none;
 }
 
 canvas {
@@ -19,6 +68,10 @@ canvas {
 }
 
 #keys {
+    display: none;
+}
+
+footer {
     display: none;
 }
 
@@ -38,8 +91,6 @@ canvas {
         height: 70px;
         font-size: 2em;
         margin: 5px;
-        background-color: #304050;
-        color: #fff;
     }
     .fa-undo-alt {
         transform: rotateY(180deg);

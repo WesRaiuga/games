@@ -1,3 +1,29 @@
+/* ----- AUDIO ----- */
+
+const audioElem = document.querySelector('audio');
+audioElem.loop = true;
+audioElem.volume = 0.2;
+const mute = document.querySelector('#mute');
+
+const playAudio = async () => {
+    try {
+        await audioElem.play();
+    } catch(err) {
+        playButton.className = "";
+    }
+}
+
+mute.addEventListener('click', event => {
+    audioElem.muted = !audioElem.muted;
+    if (audioElem.muted) {
+        mute.innerHTML = '<i class="fas fa-volume-up"></i>';
+    } else {
+        mute.innerHTML = '<i class="fas fa-volume-mute"></i>';
+    }
+});
+
+/* ----- GAME ----- */
+
 const canvas = document.querySelector('#tetris');
 const context = canvas.getContext('2d');
 
@@ -255,6 +281,19 @@ document.addEventListener('keydown', event => {
     }
 });
 
-playerReset();
-updateScore();
-update();
+const startGame = () => {
+    playerReset();
+    updateScore();
+    update();
+};
+
+const startButton = document.querySelector('#start-btn');
+startButton.addEventListener('click', event => {
+    document.querySelector('#start-menu').style.display = 'none';
+    document.querySelector('#game').style.display = 'initial';
+    document.querySelector('#mute').style.display = 'initial';
+    document.querySelector('footer').style.display = 'initial';
+
+    startGame();
+    playAudio();
+});

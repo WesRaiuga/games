@@ -10,6 +10,7 @@
     <script src="https://kit.fontawesome.com/c6a3fe59b2.js" crossorigin="anonymous"></script>
     <script src="assets/js/navbar.js" defer></script>
     <script src="assets/js/tetris.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.min.js"></script>
     <title>Tetris | Games</title>
 </head>
 <body>
@@ -38,30 +39,38 @@
     </div>
 
     <main>
-        <div id="score"></div>
-        <canvas id="tetris" width="240" height="400"></canvas>
-        <div id="buttons"></div>
+        <button id="mute" class="btn">
+            <i class="fas fa-volume-mute"></i>
+        </button>
+        <section id="start-menu">
+            <button class="btn" id="start-btn">START</button>
+        </section>
+        <section id="game">
+            <div id="score"></div>
+            <canvas id="tetris" width="240" height="400"></canvas>
+        </section>
     </main>
 
     <footer>
         <span id="pc-controls">Controls: 'Arrow Keys' or 'WASD'</span>
         <div id="keys">
             <div>
-                <button class="arrow" onclick="playerRotate(1)">
+                <button class="arrow btn" onclick="playerRotate(1)">
                     <i class="fas fa-undo-alt"></i>
                 </button>
             </div>
-            <button class="arrow" onclick="playerMove(-1)">
+            <button class="arrow btn" onclick="playerMove(-1)">
                 <i class="fas fa-chevron-left"></i>
             </button>
             
-            <button class="arrow" onclick="playerDrop()">
+            <button class="arrow btn" onclick="playerDrop()">
                 <i class="fas fa-arrow-down"></i>
             </button>
-            <button class="arrow" onclick="playerMove(1)">
+            <button class="arrow btn" onclick="playerMove(1)">
                 <i class="fas fa-chevron-right"></i>
             </button>
         </div>
     </footer>
+    <audio autoplay="true" src="assets/audio/tetris-song.mp3"></audio>
 </body>
 </html>
