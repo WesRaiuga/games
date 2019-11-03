@@ -7,16 +7,8 @@ body {
     margin: 0;
 }
 
-main {
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px; */
-}
-
 #score {
     font-size: 4em;
-    /* padding: 20px; */
     font-weight: bolder;
     color: #304050;
 }
