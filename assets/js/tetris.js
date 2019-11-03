@@ -255,9 +255,6 @@ document.addEventListener('keydown', event => {
     }
 });
 
-document.querySelector('#left')
-
 playerReset();
 updateScore();
 update();
-
