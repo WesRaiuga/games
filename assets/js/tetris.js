@@ -3,6 +3,7 @@
 const audioElem = document.querySelector('audio');
 audioElem.loop = true;
 audioElem.volume = 0.2;
+audioElem.autoplay = false;
 const mute = document.querySelector('#mute');
 
 const playAudio = async () => {
