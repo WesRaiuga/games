@@ -1,22 +1,35 @@
 /* ----- AUDIO ----- */
 
-const audioElem = document.querySelector('audio');
-audioElem.loop = true;
-audioElem.volume = 0.2;
-audioElem.autoplay = false;
+const bgMusic = document.querySelector('audio');
+bgMusic.loop = true;
+bgMusic.volume = 0.1;
+bgMusic.autoplay = false;
+
+const arenaSweepAudio = document.createElement('audio');
+arenaSweepAudio.src = 'assets/audio/tetris/arena-sweep.mp3';
+arenaSweepAudio.volume = 0.6;
+arenaSweepAudio.autoplay = false;
+
+const gameOverAudio = document.createElement('audio');
+gameOverAudio.src = 'assets/audio/tetris/game-over.mp3';
+gameOverAudio.volume = 1;
+gameOverAudio.autoplay = false;
+
 const mute = document.querySelector('#mute');
 
-const playAudio = async () => {
+const playAudio = async (audio) => {
     try {
-        await audioElem.play();
+        await audio.play();
     } catch(err) {
-        playButton.className = "";
+        console.log('Erro no áudio:\n' + audio);
     }
 }
 
 mute.addEventListener('click', event => {
-    audioElem.muted = !audioElem.muted;
-    if (audioElem.muted) {
+    bgMusic.muted = !bgMusic.muted;
+    arenaSweepAudio.muted = !arenaSweepAudio.muted;
+    gameOverAudio.muted = !gameOverAudio.muted;
+    if (bgMusic.muted) {
         mute.innerHTML = '<i class="fas fa-volume-up"></i>';
     } else {
         mute.innerHTML = '<i class="fas fa-volume-mute"></i>';
@@ -45,6 +58,7 @@ const arenaSweep = () => {
 
         player.score += rowCount * 10;
         rowCount *= 2;
+        playAudio(arenaSweepAudio);
     }
 };
 
@@ -190,6 +204,7 @@ const playerReset = () => {
         arena.forEach(row => row.fill(0));
         player.score = 0;
         updateScore();
+        playAudio(gameOverAudio);
     }
 };
 
@@ -296,5 +311,5 @@ startButton.addEventListener('click', event => {
     document.querySelector('footer').style.display = 'initial';
 
     startGame();
-    playAudio();
+    playAudio(bgMusic);
 });
