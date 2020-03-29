@@ -201,10 +201,10 @@ const playerReset = () => {
                     (player.matrix[0].length / 2 | 0);
     
     if (collide(arena, player)) {
+        playAudio(gameOverAudio);
         arena.forEach(row => row.fill(0));
         player.score = 0;
         updateScore();
-        playAudio(gameOverAudio);
     }
 };
 
