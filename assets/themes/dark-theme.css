@@ -1,0 +1,74 @@
+body {
+    --first_color: #212121;
+    --second_color: #282828;
+    --background_color: #2c2c2c;
+    --text_color: #eeeeee;
+    --link_color: #5d78cf;
+    --link_visited_color: #7f5dcf;
+    --shadow_color: #3e3e3e;
+    --hover_color: #2c2c2c;
+    background-color: var(--background_color);
+    color: var(--text_color);
+}
+
+a {
+    color: var(--link_color);
+}
+
+a:visited {
+    color: var(--link_visited_color);
+}
+
+/* Navbar */
+header {
+    background-color: var(--first_color);
+}
+.titulo h2{
+    color: var(--text_color);
+}
+.traco {
+    background-color: var(--text_color);
+}
+.filtros.mobile {
+    background-color: var(--second_color);
+}
+.filtros.mobile a{
+    border-top: 1px solid var(--first_color);
+}
+.filtros a {
+    color: var(--text_color);
+}
+.filtros a:active{
+    background-color: var(--hover_color);
+}
+@media(min-width: 576px) {
+    .filtros a:hover{
+        background-color: var(--hover_color);
+    }
+}
+
+/* Home */
+.card{
+    background-color: var(--first_color);
+    box-shadow: 5px 10px 18px var(--shadow_color);
+    color: var(--text_color);
+}
+
+.card:visited {
+    color: var(--text_color);
+}
+
+/* About */
+#about-me > img{
+    border: 2px solid var(--first_color);
+}
+.collapse button {
+    background-color: var(--first_color);
+    color: var(--text_color);
+}
+.content{
+    background-color: var(--second_color);
+}
+
+
+

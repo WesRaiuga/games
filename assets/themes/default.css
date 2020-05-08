@@ -1,0 +1,55 @@
+/* Navbar */
+header {
+    background-color: #304050;
+}
+
+.titulo h2{
+    color: #FFF;
+}
+
+.traco {
+    background-color: #FFF;
+}
+
+.filtros.mobile {
+    background-color: #3e4d5c;
+}
+.filtros.mobile a{
+    border-top: 1px solid #304050;
+}
+
+.filtros a {
+    color: #FFF;
+}
+
+.filtros a:active{
+    background-color: #304050;
+}
+
+@media(min-width: 576px) {
+    .filtros a:hover{
+        background-color: #3e4d5c;
+    }
+}
+
+/* Home */
+body{
+    background-color: #ebebeb;
+}
+
+.card{
+    background-color: #60758a;
+    box-shadow: 5px 10px 18px #888888;
+    color: #FFF;
+}
+
+/* About */
+.collapse button {
+    background-color: #304050;
+    color: white;
+}
+
+.content{
+    background-color: rgba(48, 64, 80, 0.1);
+}
+

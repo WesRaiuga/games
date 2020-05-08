@@ -1,5 +1,4 @@
 body{
-    background-color: #ebebeb;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
 }
@@ -9,10 +8,7 @@ main{
     flex-wrap: wrap;
 }
 .card{
-    background-color: #60758a;
     border-radius: 15px;
-    box-shadow: 5px 10px 18px #888888;
-    color: #FFF;
     margin: 20px;
     display: flex;
     justify-content: flex-start;
