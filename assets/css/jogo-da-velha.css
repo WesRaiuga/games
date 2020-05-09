@@ -1,5 +1,4 @@
 body{
-    background-color: #ebebeb;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
 }
@@ -10,15 +9,10 @@ main{
     height: 90vh;
     justify-content: center;
 }
-#mostrador{
-    color: #304050;
-}
 #resultado{
-    color: #304050;
     display: none;
 }
 #tabuleiro{
-    background-color: #304050;
     display: flex;
     flex-direction: column;
     height: 260px;
@@ -33,7 +27,6 @@ main{
 }
 
 .casa{
-    background-color: #ebebeb;
     cursor: pointer;
     font-size: 50px;
     font-weight: bolder;
@@ -45,11 +38,8 @@ main{
 }
 
 #restart{
-    background-color: #304050;
     border: none;
     border-radius: 10px;
-    box-shadow: 0 9px #999;
-    color: #FFF;
     cursor: pointer;
     font-size: 20px;
     font-weight: bolder;
@@ -61,11 +51,9 @@ main{
     width: 300px;
 }
 #restart:active{
-    box-shadow: 0 4px #666;
     transform: translateY(4px);
 }
 
 #vencedor{
-    color: #107a10;
     font-size: 30px;
 }

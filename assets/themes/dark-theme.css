@@ -1,22 +1,32 @@
 body {
     --first_color: #212121;
     --second_color: #282828;
-    --background_color: #2c2c2c;
-    --text_color: #eeeeee;
-    --link_color: #5d78cf;
+    --background_color: #333333;
+    --text_color_dark: #000;
+    --text_color_light: #eeeeee;
+    --link_color: #5d81cf;
     --link_visited_color: #7f5dcf;
-    --shadow_color: #3e3e3e;
+    --shadow_color_light: #4b4b4b;
+    --shadow_color_dark: #3e3e3e;
     --hover_color: #2c2c2c;
     background-color: var(--background_color);
-    color: var(--text_color);
+    color: var(--text_color_light);
 }
-
 a {
     color: var(--link_color);
 }
-
 a:visited {
     color: var(--link_visited_color);
+}
+.btn {
+    background-color: var(--first_color);
+    color: var(--text_color_2);
+}
+.btn-shadow {
+    box-shadow: 0 9px var(--shadow_color_light);
+}
+.btn-shadow:active{
+    box-shadow: 0 4px var(--shadow_color_dark);
 }
 
 /* Navbar */
@@ -24,10 +34,10 @@ header {
     background-color: var(--first_color);
 }
 .titulo h2{
-    color: var(--text_color);
+    color: var(--text_color_light);
 }
 .traco {
-    background-color: var(--text_color);
+    background-color: var(--text_color_light);
 }
 .filtros.mobile {
     background-color: var(--second_color);
@@ -36,7 +46,7 @@ header {
     border-top: 1px solid var(--first_color);
 }
 .filtros a {
-    color: var(--text_color);
+    color: var(--text_color_light);
 }
 .filtros a:active{
     background-color: var(--hover_color);
@@ -50,25 +60,53 @@ header {
 /* Home */
 .card{
     background-color: var(--first_color);
-    box-shadow: 5px 10px 18px var(--shadow_color);
-    color: var(--text_color);
+    box-shadow: 5px 10px 18px var(--shadow_color_light);
+    color: var(--text_color_light);
 }
-
 .card:visited {
-    color: var(--text_color);
+    color: var(--text_color_light);
 }
 
 /* About */
 #about-me > img{
     border: 2px solid var(--first_color);
+    filter: brightness(75%);
 }
 .collapse button {
     background-color: var(--first_color);
-    color: var(--text_color);
+    color: var(--text_color_light);
 }
 .content{
     background-color: var(--second_color);
 }
 
+/* Jogo da Velha */
+#mostrador{
+    color: var(--text_color_light);
+}
+#resultado{
+    color: var(--text_color_light);
+}
+#tabuleiro{
+    background-color: var(--first_color);
+}
+.casa{
+    background-color: var(--background_color);
+    color: var(--text_color_light);
+}
+#vencedor{
+    color: #107a10;
+}
 
-
+/* Tetris */
+.btn {
+    background-color: var(--first_color);
+    color: var(--text_color_2);
+    border-color: var(--shadow_color_dark);
+}
+#score {
+    color: var(--text_color_light);
+}
+canvas {
+    border: solid .5em var(--first_color);
+}

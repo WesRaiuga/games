@@ -1,15 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300);
 
 body {
-    background-color: #ebebeb;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     margin: 0;
 }
 
 .btn {
-    background-color: #304050;
-    color: #fff;
     outline: none;
     cursor: pointer;
 }
@@ -33,12 +30,10 @@ main {
     font-weight: bolder;
     letter-spacing: 2px;
     border-radius: 10px;
-    box-shadow: 0 9px #999;
     border: none;
 }
 
 #start-btn:active{
-    box-shadow: 0 4px #666;
     transform: translateY(4px);
 }
 
@@ -55,7 +50,6 @@ main {
 #score {
     font-size: 4em;
     font-weight: bolder;
-    color: #304050;
 }
 
 #game {
@@ -63,7 +57,6 @@ main {
 }
 
 canvas {
-    border: solid .5em #304050;
     height: 70vh;
 }
 

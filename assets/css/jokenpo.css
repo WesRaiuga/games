@@ -4,7 +4,6 @@
     src: url(../fonts/Splatter_Kings.ttf) format('truetype');
 }
 body{
-    background-color: #ebebeb;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
 }
@@ -16,14 +15,11 @@ main{
     letter-spacing: 3px;
 }
 .btn{
-    background-color: #b9b9b9;
     border: none;
-    box-shadow: 0 9px #999;
     cursor: pointer;
     outline: none;
 }
 .btn:active{
-    box-shadow: 0 4px #666;
     transform: translateY(4px);
 }
 
@@ -63,7 +59,6 @@ main{
     width: 70px;
 }
 #mostrador{
-    color: #002fff;
     font-size: 25px;
     margin-top: 20px;
     text-align: center;
@@ -107,9 +102,8 @@ main{
     height: 30px;
 }
 
-.btn-jogar{
+#btn-start{
     border-radius: 15px;
-    color: #000;
     cursor: not-allowed;
     font-family: 'Splatter Kings', sans-serif;
     font-size: 20px;

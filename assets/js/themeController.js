@@ -27,7 +27,3 @@ for (let i = 0; i < themeButtons.length; i++) {
       changeTheme();
   });
 }
-
-
-
-

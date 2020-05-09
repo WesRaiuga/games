@@ -66,7 +66,7 @@ const darFeedbackEscolha = (mostrar, apagar1, apagar2, cor) => {
 
 const habilitarStart = () => {
     start.disabled = false;
-    start.style = 'cursor: pointer; background-color: #1ba8e9; visibility: visible;';
+    start.style = 'cursor: pointer; visibility: visible;';
 };
 
 const resetarBotoes = () => {

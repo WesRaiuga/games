@@ -1,55 +1,109 @@
+body {
+    --first_color: #304050;
+    --second_color: #3e4d5c;
+    --third_color: #60758a;
+    --fourth_color: #3040501a;
+    --background_color: #ebebeb;
+    --text_color_dark: #000;
+    --text_color_light: #eeeeee;
+    --link_color: #5d81cf;
+    --link_visited_color: #7f5dcf;
+    --shadow_color_dark: #666;
+    --shadow_color_light: #999;
+    --hover_color: #3e4d5c;
+    background-color: var(--background_color);
+    color: var(--text_color_dark);
+}
+a {
+    color: var(--link_color);
+}
+a:visited {
+    color: var(--link_visited_color);
+}
+.btn {
+    background-color: var(--first_color);
+    color: var(--text_color_light);
+}
+.btn-shadow {
+    box-shadow: 0 9px var(--shadow_color_light);
+}
+.btn-shadow:active{
+    box-shadow: 0 4px var(--shadow_color_dark);
+}
+
 /* Navbar */
 header {
-    background-color: #304050;
+    background-color: var(--first_color);
 }
-
 .titulo h2{
-    color: #FFF;
+    color: var(--text_color_light);
 }
-
 .traco {
-    background-color: #FFF;
+    background-color: var(--text_color_light);
 }
-
 .filtros.mobile {
-    background-color: #3e4d5c;
+    background-color: var(--second_color);
 }
 .filtros.mobile a{
-    border-top: 1px solid #304050;
+    border-top: 1px solid var(--first_color);
 }
-
 .filtros a {
-    color: #FFF;
+    color: var(--text_color_light);
 }
-
 .filtros a:active{
-    background-color: #304050;
+    background-color: var(--hover_color);
 }
-
 @media(min-width: 576px) {
     .filtros a:hover{
-        background-color: #3e4d5c;
+        background-color: var(--hover_color);
     }
 }
 
 /* Home */
-body{
-    background-color: #ebebeb;
-}
-
 .card{
-    background-color: #60758a;
-    box-shadow: 5px 10px 18px #888888;
-    color: #FFF;
+    background-color: var(--third_color);
+    box-shadow: 5px 10px 18px var(--shadow_color_dark);
+    color: var(--text_color_light);
+}
+.card:visited {
+    color: var(--text_color_light);
 }
 
 /* About */
+#about-me > img{
+    border: 2px solid var(--first_color);
+}
 .collapse button {
-    background-color: #304050;
-    color: white;
+    background-color: var(--first_color);
+    color: var(--text_color_light);
 }
-
 .content{
-    background-color: rgba(48, 64, 80, 0.1);
+    background-color: var(--fourth_color);
+    color: var(--text_color_dark);
 }
 
+/* Jogo da Velha */
+#mostrador{
+    color: var(--text_color_dark);
+}
+#resultado{
+    color: var(--text_color_dark);
+}
+#tabuleiro{
+    background-color: var(--first_color);
+}
+.casa{
+    background-color: var(--background_color);
+    color: var(--text_color_dark);
+}
+#vencedor{
+    color: #107a10;
+}
+
+/* Tetris */
+#score {
+    color: var(--first_color);
+}
+canvas {
+    border: solid .5em var(--first_color);
+}
